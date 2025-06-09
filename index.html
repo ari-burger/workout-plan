@@ -1,0 +1,84 @@
+<style>
+  .plan-table { width: 100%; border-collapse: collapse; margin-bottom: 2em; }
+  .plan-table th, .plan-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    vertical-align: top;
+  }
+  .plan-table th {
+    background: #f7f7f7;
+    text-align: center;
+  }
+  .plan-header {
+    font-size: 1.2em;
+    margin-top: 1em;
+  }
+  @media (max-width: 600px) {
+    .plan-table, .plan-table thead, .plan-table tbody, .plan-table th, .plan-table td, .plan-table tr {
+      display: block;
+    }
+    .plan-table th { position: absolute; top: -9999px; left: -9999px; }
+    .plan-table td {
+      border: none;
+      position: relative;
+      padding-left: 50%;
+    }
+    .plan-table td:before {
+      position: absolute;
+      top: 8px; left: 8px;
+      width: 45%;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+    .plan-table td:nth-of-type(1):before { content: "EASY"; }
+    .plan-table td:nth-of-type(2):before { content: "MEDIUM"; }
+    .plan-table td:nth-of-type(3):before { content: "HARD"; }
+  }
+</style>
+
+<div class="plan-week">
+  <div class="plan-header">Week 1 – Repeat circuit 5× for ~25–30 min</div>
+  <table class="plan-table">
+    <thead>
+      <tr>
+        <th>EASY<br><small>30 / 30 sec (Yellow–Red)</small></th>
+        <th>MEDIUM<br><small>40 / 20 sec (Red–Green)</small></th>
+        <th>HARD<br><small>50 / 10 sec (Blue–Black)</small></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          • <a href="https://www.youtube.com/results?search_query=incline+push+ups" target="_blank">Incline Push-Ups</a><br>
+          • <a href="https://www.youtube.com/results?search_query=resistance+band+rows" target="_blank">Resistance Band Rows</a><br>
+          • <a href="https://www.youtube.com/results?search_query=wall+plank" target="_blank">Wall Plank</a><br>
+          • <a href="https://www.youtube.com/results?search_query=arm+circles+exercise" target="_blank">Arm Circles</a><br>
+          • <a href="https://www.youtube.com/results?search_query=band+tricep+kickbacks" target="_blank">Band Tricep Kickbacks</a>
+        </td>
+        <td>
+          • <a href="https://www.youtube.com/results?search_query=push+ups" target="_blank">Push-Ups</a><br>
+          • <a href="https://www.youtube.com/results?search_query=band+rows" target="_blank">Band Rows</a><br>
+          • <a href="https://www.youtube.com/results?search_query=plank+shoulder+taps" target="_blank">Plank Shoulder Taps</a><br>
+          • <a href="https://www.youtube.com/results?search_query=band+bicep+curls" target="_blank">Band Bicep Curls</a><br>
+          • <a href="https://www.youtube.com/results?search_query=tricep+dips" target="_blank">Tricep Dips</a>
+        </td>
+        <td>
+          • <a href="https://www.youtube.com/results?search_query=push+up+to+shoulder+tap" target="_blank">Push-Up to Shoulder Tap</a><br>
+          • <a href="https://www.youtube.com/results?search_query=band+lat+pulldown" target="_blank">Band Lat Pulldown</a><br>
+          • <a href="https://www.youtube.com/results?search_query=diamond+push+ups" target="_blank">Diamond Push-Ups</a><br>
+          • <a href="https://www.youtube.com/results?search_query=plank+with+reach" target="_blank">Plank with Reach</a><br>
+          • <a href="https://www.youtube.com/results?search_query=decline+push+ups" target="_blank">Decline Push-Ups</a>
+        </td>
+      </tr>
+      <!-- Repeat the <tr> block for Day 2, Day 3, Day 4 -->
+    </tbody>
+  </table>
+  <div class="plan-header">Optional 10-Minute Ab Workout (Repeat circuit twice)</div>
+  <ul>
+    <li>Crunches (40 sec; Rest 20 sec)</li>
+    <li>Flutter Kicks (40 sec; Rest 20 sec)</li>
+    <li>Russian Twists (40 sec; Rest 20 sec)</li>
+    <li>Leg Raises (40 sec; Rest 20 sec)</li>
+    <li>Plank (60 sec)</li>
+  </ul>
+</div>
