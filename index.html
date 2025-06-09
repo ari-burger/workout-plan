@@ -1,163 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  …
+  <meta charset="UTF-8" />
+  <title>12-Week Workout Plan</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #222;            /* dark background */
-      color: #eee;                 /* light text */
-      line-height: 1.4;
-    }
-    .container {
-      max-width: 900px;
-      margin: 1em auto;
-      background: #333;            /* darker card */
-      padding: 1em;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    }
-    .week-header {
-      text-align: center;
-      font-size: 1.6em;
-      font-weight: 500;
-      margin-bottom: 0.5em;
-      color: #fff;
-    }
-    .day-header {
-      font-size: 1.1em;
-      font-weight: 500;
-      margin: 1.2em 0 0.3em;
-      border-bottom: 1px solid #555;
-      padding-bottom: 0.2em;
-      color: #ddd;
-    }
-    .plan-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 1em;
-    }
-    .plan-table th,
-    .plan-table td {
-      padding: 0.6em 0.8em;
-      vertical-align: top;
-    }
-    .plan-table th {
-      background: #444;
-      border-bottom: 2px solid #666;
-      text-align: center;
-      font-weight: 500;
-      color: #fff;
-    }
-    .plan-table td {
-      border-bottom: 1px solid #555;
-      color: #ddd;
-    }
-    .plan-table a {
-      color: #66aaff;
-      text-decoration: none;
-    }
-    .plan-table a:hover {
-      text-decoration: underline;
-    }
-    .plan-table small {
-      font-size: 0.85em;
-      color: #bbb;
-    }
-    .ab-workout {
-      margin-top: 1.5em;
-    }
-    .ab-workout-header {
-      font-size: 1.1em;
-      font-weight: 500;
-      color: #ddd;
-      margin-bottom: 0.4em;
-    }
-    .ab-workout ul {
-      list-style: disc inside;
-      margin-left: 1em;
-      color: #ddd;
-    }
-    /* swipe nav buttons */
-    #week-nav {
-      display: flex;
-      justify-content: space-between;
-      margin: 1em 0;
-      padding: 0 1em;
-    }
-    #week-nav button {
-      background: #555;
-      color: #fff;
-      border: none;
-      padding: 0.5em 1em;
-      font-size: 1em;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    #week-nav button:disabled {
-      opacity: 0.4;
-      cursor: default;
-    }
+    body { font-family: 'Roboto', sans-serif; margin: 1em; color: #333; line-height: 1.4; }
+    .container { max-width: 900px; margin: 0 auto; background: #fafafa; padding: 1em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .week-header { text-align: center; font-size: 1.6em; font-weight: 500; margin-bottom: 0.5em; }
+    .day-header { font-size: 1.1em; font-weight: 500; margin: 1.2em 0 0.3em; border-bottom: 1px solid #ddd; padding-bottom: 0.2em; }
+    .plan-table { width: 100%; border-collapse: collapse; margin-bottom: 1em; }
+    .plan-table th, .plan-table td { padding: 0.6em 0.8em; vertical-align: top; }
+    .plan-table th { background: #f0f0f0; border-bottom: 2px solid #ccc; text-align: center; font-weight: 500; }
+    .plan-table td { border-bottom: 1px solid #eee; }
+    .plan-table a { color: #0066cc; text-decoration: none; }
+    .plan-table a:hover { text-decoration: underline; }
+    .plan-table small { font-size: 0.85em; color: #555; }
+    .ab-workout { margin-top: 1.5em; }
+    .ab-workout-header { font-size: 1.1em; font-weight: 500; margin-bottom: 0.4em; }
+    .ab-workout ul { list-style: disc inside; margin-left: 1em; }
     @media (max-width: 600px) {
-      .plan-table, .plan-table thead, .plan-table tbody,
-      .plan-table th, .plan-table td, .plan-table tr {
-        display: block;
-      }
+      .plan-table, .plan-table thead, .plan-table tbody, .plan-table th, .plan-table td, .plan-table tr { display: block; }
       .plan-table th { position: absolute; left: -9999px; top: -9999px; }
-      .plan-table td {
-        border: none;
-        position: relative;
-        padding-left: 40%;
-        color: #ddd;
-      }
-      .plan-table td:before {
-        position: absolute;
-        left: 0.8em; top: 0.6em;
-        width: 35%;
-        white-space: nowrap;
-        font-weight: 500;
-        color: #fff;
-      }
+      .plan-table td { border: none; position: relative; padding-left: 40%; }
+      .plan-table td:before { position: absolute; left: 0.8em; top: 0.6em; width: 35%; white-space: nowrap; font-weight: 500; }
       .plan-table td:nth-of-type(1):before { content: "EASY"; }
       .plan-table td:nth-of-type(2):before { content: "MEDIUM"; }
       .plan-table td:nth-of-type(3):before { content: "HARD"; }
     }
+    #week-nav { display: flex; justify-content: space-between; margin: 1em 0; }
+    #week-nav button { background: #0066cc; color: #fff; border: none; padding: 0.5em 1em; font-size: 1em; border-radius: 4px; cursor: pointer; }
+    #week-nav button:disabled { opacity: 0.5; cursor: default; }
   </style>
 </head>
 <body>
-  <script>
-    const weeks = Array.from(document.querySelectorAll('.plan-week'));
-    let current = 0;
-
-    function showWeek(i) {
-      weeks.forEach((w, idx) => w.style.display = idx === i ? 'block' : 'none');
-      document.getElementById('prev-week').disabled = i === 0;
-      document.getElementById('next-week').disabled = i === weeks.length - 1;
-    }
-
-    document.getElementById('prev-week').addEventListener('click', () => {
-      if (current > 0) showWeek(--current);
-    });
-    document.getElementById('next-week').addEventListener('click', () => {
-      if (current < weeks.length - 1) showWeek(++current);
-    });
-
-    // Swipe gestures
-    let touchStartX = 0;
-    document.addEventListener('touchstart', e => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
-    document.addEventListener('touchend', e => {
-      const dx = e.changedTouches[0].screenX - touchStartX;
-      if (dx > 50) document.getElementById('prev-week').click();
-      else if (dx < -50) document.getElementById('next-week').click();
-    });
-
-    // Initialize on load
-    showWeek(current);
-  </script>
+  <div id="week-nav">
+    <button id="prev-week">&larr; Prev</button>
+    <button id="next-week">Next &rarr;</button>
+  </div>
 <div class="container plan-week" id="week1">
   <div class="week-header">Week 1 – Repeat circuit 5× for ~25–30 min</div>
   <div class="day-header">Day 1 – 2025-06-08 – Upper Body</div>
